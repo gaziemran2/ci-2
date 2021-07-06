@@ -5,12 +5,12 @@ class Login extends CI_Controller{
 
     public function index()
     {
-        $data['page_title'] = 'Abc TECH | login'; //will be available as $page_title in view
+        $data['page_title'] = 'Abc COMPANY | login'; //will be available as $page_title in view
         $this->load->view('login/index', $data);   
     }
 
     public function forgot_password(){
-        $data['page_title'] = 'Abc TECH | Forgot Password';
+        $data['page_title'] = 'Abc COMPANY | Forgot Password';
         $this->load->view('login/forgot_password', $data);
     }
 
@@ -32,14 +32,14 @@ class Login extends CI_Controller{
     public function dashboard(){
 
         //$data = array();
-        $data['page_title'] = 'Abc TECH | Dashboard';
+        $data['page_title'] = 'Abc COMPANY | Dashboard';
         $data['main_content'] = $this->load->view('dashboard/index', '',true);
         $this->load->view('common/template', $data);
     }
 
     public function logout(){
 
-        $data['page_title'] = 'Abc TECH | login';
+        $data['page_title'] = 'Abc COMPANY | login';
         $sdata['message'] = 'Logout Successfully';
         $this->session->set_userdata($sdata);
         redirect(base_url());

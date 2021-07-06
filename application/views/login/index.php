@@ -4,7 +4,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="<?php echo base_url();?>" class="h1"><b>Abc</b> TECH</a>
+            <a href="<?php echo base_url();?>" class="h1"><b>Abc</b> COMPANY</a>
         </div>
         <div class="card-body">
 
