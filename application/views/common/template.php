@@ -127,7 +127,7 @@
 					$admin_name=$this->session->userdata('admin_name');
 					if ($admin_name) {
 						echo "<a href='#' class='d-block'>$admin_name</a>";
-						$this->session->unset_userdata('admin_name');
+						//$this->session->unset_userdata('admin_name');
 					}
 					else{
 						echo "<a href='#' class='d-block'>Gazi Emran!</a>";
@@ -144,13 +144,19 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link active">
+						<a href="<?php echo site_url('dashboard'); ?>" class="nav-link <?php if($this->uri->uri_string() == 'dashboard') { echo 'active'; } ?>">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
                             </p>
                         </a>
                     </li>
+					<li class="nav-item">
+						<a href="<?php echo site_url('service'); ?>" class="nav-link <?php if($this->uri->uri_string() == 'service') { echo 'active'; } ?>">
+							<i class="nav-icon fas fa-tasks"></i>
+							<p>Add Services</p>
+						</a>
+					</li>
                     <li class="nav-item">
                         <a href="pages/widgets.html" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
@@ -215,14 +221,18 @@
                             </li>
                         </ul>
                     </li>
+					<li class="nav-item">
+						<a href="<?php echo base_url()?>database_backup" class="nav-link">
+							<i class="nav-icon far fa-circle text-info"></i>
+							<p>Database Backup</p>
+						</a>
+					</li>
                     <li class="nav-item">
                         <a href="<?php echo base_url()?>logout" class="nav-link">
                             <i class="nav-icon far fa-circle text-info"></i>
                             <p>Logout</p>
                         </a>
                     </li>
-
-
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

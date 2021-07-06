@@ -57,5 +57,8 @@ $route['dashboard'] = 'login/dashboard';
 $route['logout'] = 'login/logout';
 $route['admin_login'] = 'login/admin_login';
 $route['login_check'] = 'login/login_check';
+$route['service'] = 'service';
+$route['add_service'] = 'service/add_services';
+$route['database_backup'] = 'database_backup';
 
 
