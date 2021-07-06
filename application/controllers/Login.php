@@ -22,6 +22,9 @@ class Login extends CI_Controller{
         $sdata=array();
 
         if ($result) {
+			$sdata['admin_id']=$result->admin_id;
+			$sdata['admin_name']=$result->admin_name;
+			$this->session->set_userdata($sdata);
             redirect('dashboard');
         } else {
             $sdata['message']='Your email or password is invalid';
@@ -31,17 +34,32 @@ class Login extends CI_Controller{
     }
     public function dashboard(){
 
-        //$data = array();
-        $data['page_title'] = 'Abc COMPANY | Dashboard';
-        $data['main_content'] = $this->load->view('dashboard/index', '',true);
-        $this->load->view('common/template', $data);
+		if (!$this->session->userdata('admin_id')) {
+			$sdata['message']='Please login to access this page';
+			$this->session->set_userdata($sdata);
+			redirect(base_url());
+		}
+		else
+		{
+			$data['page_title'] = 'Abc COMPANY | Dashboard';
+			$data['main_content'] = $this->load->view('dashboard/index', '',true);
+			$this->load->view('common/template', $data);
+		}
     }
 
     public function logout(){
-
-        $data['page_title'] = 'Abc COMPANY | login';
-        $sdata['message'] = 'Logout Successfully';
-        $this->session->set_userdata($sdata);
-        redirect(base_url());
+		if (!$this->session->userdata('admin_id')) {
+			$sdata['message']='Please login to access this page';
+			$this->session->set_userdata($sdata);
+			redirect(base_url());
+		}
+		else
+		{
+			$this->session->unset_userdata('admin_id');
+			$this->session->unset_userdata('admin_name');
+			$sdata['message'] = 'Logout Successfully';
+			$this->session->set_userdata($sdata);
+			redirect(base_url());
+		}
     }
 }

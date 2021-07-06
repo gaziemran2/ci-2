@@ -123,7 +123,17 @@
                     <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+					<?php
+					$admin_name=$this->session->userdata('admin_name');
+					if ($admin_name) {
+						echo "<a href='#' class='d-block'>$admin_name</a>";
+						$this->session->unset_userdata('admin_name');
+					}
+					else{
+						echo "<a href='#' class='d-block'>Gazi Emran!</a>";
+					}
+
+					?>
                 </div>
             </div>
 

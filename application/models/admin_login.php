@@ -11,7 +11,6 @@ class Admin_login extends CI_Model{
         $this->db->where('admin_pass', md5($admin_pass));
         $query_result = $this->db->get();
         $result = $query_result->row();
-        //print_r($result);
-        return $result;    
+        return $result;
     }
 }
