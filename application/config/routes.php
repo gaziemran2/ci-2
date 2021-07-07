@@ -60,5 +60,7 @@ $route['login_check'] = 'login/login_check';
 $route['service'] = 'service';
 $route['add_service'] = 'service/add_services';
 $route['database_backup'] = 'database_backup';
+$route['edit_service/(.+)'] = 'service/edit_service/$1';
+
 
 
