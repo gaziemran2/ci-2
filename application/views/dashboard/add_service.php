@@ -50,7 +50,7 @@
 							<!-- /.card-body -->
 
 							<div class="card-footer">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Add Service</button>
 							</div>
 						</form>
 					</div>
@@ -82,8 +82,8 @@
 									<td><?php echo $row->service_name;?></td>
 									<td><a href="<?php echo base_url()?>edit_service/<?php echo $row->service_id;?>"
 										   class=""><i class="far fa-edit"></i></a>
-										<a href="<?php echo base_url()?><?php echo $row->service_id;?>"
-										   class=""><i class="fas fa-trash"></i></a>
+										<a href="<?php echo base_url()?>delete_service/<?php echo $row->service_id;?>"
+										   id="delete"><i class="fas fa-trash"></i></a>
 									</td>
 								</tr>
 								<?php }?>

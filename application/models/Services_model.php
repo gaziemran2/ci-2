@@ -5,7 +5,6 @@ class Services_model extends CI_Model{
 
 	public function save()
 	{
-		//$data=array();
 		$data['service_name']=$this->input->post('service_name', true);
 		$this->db->insert('tbl_services', $data);
 	}
@@ -19,7 +18,7 @@ class Services_model extends CI_Model{
 		//echo '<pre>'; print_r($service_info);exit;
 		return $service_info;
 	}
-	public function service_info_by_id($service_id){
+	public function edit_service($service_id){
 		$this->db->SELECT('*');
 		$this->db->FROM('tbl_services');
 		$result=$this->db->WHERE('service_id', $service_id);
@@ -31,10 +30,13 @@ class Services_model extends CI_Model{
 		return $result;
 	}
 	public function update_service(){
-		//$data=array();
 		$service_id=$this->input->post('service_id', true);
 		$data['service_name']=$this->input->post('service_name', true);
 		$this->db->WHERE('service_id', $service_id);
 		$this->db->UPDATE('tbl_services', $data);
+	}
+	public function delete_service($service_id){
+		$this->db->WHERE('service_id', $service_id);
+		$this->db->DELETE('tbl_services');
 	}
 }

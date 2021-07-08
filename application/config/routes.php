@@ -62,6 +62,7 @@ $route['add_service'] = 'service/add_services';
 $route['database_backup'] = 'database_backup';
 $route['edit_service/(.+)'] = 'service/edit_service/$1';
 $route['update_service'] = 'service/update_service';
+$route['delete_service/(.+)'] = 'service/delete_service/$1';
 
 
 
