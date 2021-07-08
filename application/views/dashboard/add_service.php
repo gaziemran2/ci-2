@@ -82,7 +82,7 @@
 									<td><?php echo $row->service_name;?></td>
 									<td><a href="<?php echo base_url()?>edit_service/<?php echo $row->service_id;?>"
 										   class=""><i class="far fa-edit"></i></a>
-										<a href="<?php echo base_url()?>edit_service/<?php echo $row->service_id;?>"
+										<a href="<?php echo base_url()?><?php echo $row->service_id;?>"
 										   class=""><i class="fas fa-trash"></i></a>
 									</td>
 								</tr>

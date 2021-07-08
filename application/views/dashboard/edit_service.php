@@ -5,12 +5,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Add Services</h1>
+					<h1>Update Services</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="<?php echo base_url()?>dashboard">Home</a></li>
-						<li class="breadcrumb-item active">Add Services</li>
+						<li class="breadcrumb-item active">Update Services</li>
 					</ol>
 				</div>
 			</div>
@@ -40,17 +40,18 @@
 						</div>
 						<!-- /.card-header -->
 						<!-- form start -->
-						<form action="<?php echo base_url()?>edit_service" method="post">
+						<form action="<?php echo base_url()?>update_service" method="post">
 							<div class="card-body">
+									<input type="hidden" class="form-control" id="" placeholder="" name="service_id" value="<?php echo $service_info_by_id->service_id;?>" required>
 								<div class="form-group">
 									<label for="exampleInputEmail1">Service Name</label>
-									<input type="text" class="form-control" id="" placeholder="" name="service_name" required>
+									<input type="text" class="form-control" id="" placeholder="" name="service_name" value="<?php echo $service_info_by_id->service_name;?>" required>
 								</div>
 							</div>
 							<!-- /.card-body -->
 
 							<div class="card-footer">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Update</button>
 							</div>
 						</form>
 					</div>
